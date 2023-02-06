@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:Keypad PCB-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -14,17 +15,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Microchip_ATmega:ATmega32U4-AU U1
-U 1 1 63DFA3BE
-P 5500 3500
-F 0 "U1" H 5500 1611 50  0000 C CNN
-F 1 "ATmega32U4-AU" H 5500 1520 50  0000 C CNN
-F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 5500 3500 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 5500 3500 50  0001 C CNN
-	1    5500 3500
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+5V #PWR0101
 U 1 1 63E012AE
 P 5400 1550
@@ -37,12 +27,6 @@ F 3 "" H 5400 1550 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5400 1700 5400 1550
-Wire Wire Line
-	5400 1700 5500 1700
-Connection ~ 5400 1700
-Wire Wire Line
-	5500 1700 5600 1700
-Connection ~ 5500 1700
 $Comp
 L power:GND #PWR0102
 U 1 1 63E04874
@@ -54,11 +38,6 @@ F 3 "" H 4950 5300 50  0001 C CNN
 	1    4950 5300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4950 5300 5400 5300
-Wire Wire Line
-	5400 5300 5500 5300
-Connection ~ 5400 5300
 $Comp
 L power:GND #PWR0103
 U 1 1 63E0CDB0
@@ -70,8 +49,6 @@ F 3 "" H 7500 4100 50  0001 C CNN
 	1    7500 4100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6100 4100 6700 4100
 Wire Wire Line
 	6900 4100 7500 4100
 $Comp
@@ -423,8 +400,6 @@ F 3 "" H 7975 3675 60  0001 C CNN
 	1    8600 3700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8550 3850 8550 3950
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX3
 U 1 1 63E4A1BA
@@ -436,45 +411,14 @@ F 3 "" H 8775 3675 60  0001 C CNN
 	1    9400 3700
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:D_Small D1
-U 1 1 63E40E4C
-P 8550 4050
-F 0 "D1" V 8596 3982 50  0000 R CNN
-F 1 "D_Small" V 8505 3982 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-123" V 8550 4050 50  0001 C CNN
-F 3 "~" V 8550 4050 50  0001 C CNN
-	1    8550 4050
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	8750 3650 8750 3300
 Wire Wire Line
 	9550 3650 9550 3300
-$Comp
-L Device:D_Small D3
-U 1 1 63E57EF8
-P 9350 4050
-F 0 "D3" V 9396 3982 50  0000 R CNN
-F 1 "D_Small" V 9305 3982 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-123" V 9350 4050 50  0001 C CNN
-F 3 "~" V 9350 4050 50  0001 C CNN
-	1    9350 4050
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	9350 3850 9350 3950
-Wire Wire Line
-	9350 4150 8550 4150
-Wire Wire Line
-	8550 4150 8150 4150
-Connection ~ 8550 4150
 Text GLabel 8750 3300 1    50   Input ~ 0
 COL0
 Text GLabel 9550 3300 1    50   Input ~ 0
 COL1
-Text GLabel 8150 4150 0    50   Input ~ 0
-ROW0
 Wire Wire Line
 	3450 2500 3450 2650
 Connection ~ 3450 2500
@@ -503,4 +447,71 @@ F 3 "~" H 1700 3100 50  0001 C CNN
 	1    1700 3100
 	-1   0    0    1   
 $EndComp
+Connection ~ 5400 5300
+Wire Wire Line
+	4950 5300 5400 5300
+Connection ~ 5500 1700
+Connection ~ 5400 1700
+Wire Wire Line
+	6100 4100 6700 4100
+Wire Wire Line
+	5500 1700 5600 1700
+Wire Wire Line
+	5400 5300 5500 5300
+Wire Wire Line
+	5400 1700 5500 1700
+Text GLabel 6200 4700 2    50   Input ~ 0
+COL1
+Text GLabel 6200 4600 2    50   Input ~ 0
+COL0
+$Comp
+L MCU_Microchip_ATmega:ATmega32U4-AU U1
+U 1 1 63DFA3BE
+P 5500 3500
+F 0 "U1" H 5500 1611 50  0000 C CNN
+F 1 "ATmega32U4-AU" H 5500 1520 50  0000 C CNN
+F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 5500 3500 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 5500 3500 50  0001 C CNN
+	1    5500 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 4600 6200 4600
+Wire Wire Line
+	6100 4700 6200 4700
+$Comp
+L Device:D_Small D1
+U 1 1 63E15488
+P 8450 3950
+F 0 "D1" V 8496 3882 50  0000 R CNN
+F 1 "D_Small" V 8405 3882 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-123" V 8450 3950 50  0001 C CNN
+F 3 "~" V 8450 3950 50  0001 C CNN
+	1    8450 3950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D_Small D2
+U 1 1 63E15EE0
+P 9250 3950
+F 0 "D2" V 9296 3882 50  0000 R CNN
+F 1 "D_Small" V 9205 3882 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-123" V 9250 3950 50  0001 C CNN
+F 3 "~" V 9250 3950 50  0001 C CNN
+	1    9250 3950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8450 3850 8550 3850
+Wire Wire Line
+	9250 3850 9350 3850
+Wire Wire Line
+	8250 4050 8450 4050
+Connection ~ 8450 4050
+Wire Wire Line
+	8450 4050 9250 4050
+Text GLabel 8250 4050 0    50   Input ~ 0
+ROW0
+Text GLabel 6100 4800 2    50   Input ~ 0
+ROW0
 $EndSCHEMATC
